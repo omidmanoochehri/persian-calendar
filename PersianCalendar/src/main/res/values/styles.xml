@@ -81,7 +81,8 @@
         <item name="bottomSheetDialogTheme">@style/BottomSheetDialogTheme</item>
         <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
         <item name="appToolbarTheme">@style/ThemeOverlay.Material3.Dark</item>
-        <item name="android:typeface">sans</item>
+        <item name="android:fontFamily">@font/peyda</item>
+        <item name="fontFamily">@font/peyda</item>
         <item name="android:letterSpacing" tools:targetApi="lollipop">0</item>
         <item name="SunViewHorizonColor">@color/sViewHorizonColorDark</item>
         <item name="SunViewTimelineColor">@color/sViewTimelineColorDark</item>
@@ -105,7 +106,8 @@
         <item name="bottomSheetDialogTheme">@style/BottomSheetDialogTheme</item>
         <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
         <item name="appToolbarTheme">@style/ThemeOverlay.Material3.Dark</item>
-        <item name="android:typeface">sans</item>
+        <item name="android:fontFamily">@font/peyda</item>
+        <item name="fontFamily">@font/peyda</item>
         <item name="android:letterSpacing" tools:targetApi="lollipop">0</item>
         <item name="SunViewHorizonColor">@color/sViewHorizonColorLight</item>
         <item name="SunViewTimelineColor">@color/sViewTimelineColorLight</item>
