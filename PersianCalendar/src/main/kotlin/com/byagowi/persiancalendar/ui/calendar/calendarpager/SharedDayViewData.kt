@@ -8,6 +8,7 @@ import android.util.TypedValue
 import android.view.ViewGroup
 import androidx.annotation.ColorInt
 import androidx.annotation.DrawableRes
+import androidx.core.content.res.ResourcesCompat
 import com.byagowi.persiancalendar.R
 import com.byagowi.persiancalendar.global.language
 import com.byagowi.persiancalendar.ui.utils.dp
@@ -64,11 +65,14 @@ class SharedDayViewData(
         it.color = widgetTextColor ?: context.resolveColor(R.attr.colorCurrentDay)
     }
 
+    private val typeface = ResourcesCompat.getFont(context, R.font.peyda)
+
     private val textSize = diameter * (if (isArabicDigitSelected) 18 else 25) / 40
     private val headerTextSize = diameter * 11 / 40
 
     val dayOfMonthNumberTextHolidayPaint = Paint(Paint.ANTI_ALIAS_FLAG).also {
         it.textAlign = Paint.Align.CENTER
+        it.typeface = typeface
         it.textSize = textSize
         it.color = context.resolveColor(R.attr.colorHoliday)
         addShadowIfNeeded(it)
@@ -77,6 +81,7 @@ class SharedDayViewData(
     private val colorTextDay = widgetTextColor ?: context.resolveColor(R.attr.colorTextDay)
     val dayOfMonthNumberTextPaint = Paint(Paint.ANTI_ALIAS_FLAG).also {
         it.textAlign = Paint.Align.CENTER
+        it.typeface = typeface
         it.textSize = textSize
         it.color = colorTextDay
         addShadowIfNeeded(it)
@@ -86,12 +91,14 @@ class SharedDayViewData(
         widgetTextColor ?: context.resolveColor(R.attr.colorTextDaySelected)
     val dayOfMonthNumberTextSelectedPaint = Paint(Paint.ANTI_ALIAS_FLAG).also {
         it.textAlign = Paint.Align.CENTER
+        it.typeface = typeface
         it.textSize = textSize
         it.color = colorTextDaySelected
         addShadowIfNeeded(it)
     }
     val headerTextSelectedPaint = Paint(Paint.ANTI_ALIAS_FLAG).also {
         it.textAlign = Paint.Align.CENTER
+        it.typeface = typeface
         it.textSize = headerTextSize
         it.color = colorTextDaySelected
         addShadowIfNeeded(it)
@@ -100,18 +107,21 @@ class SharedDayViewData(
     private val colorTextDayName = widgetTextColor ?: context.resolveColor(R.attr.colorTextDayName)
     val headerTextPaint = Paint(Paint.ANTI_ALIAS_FLAG).also {
         it.textAlign = Paint.Align.CENTER
+        it.typeface = typeface
         it.textSize = headerTextSize
         it.color = colorTextDayName
         addShadowIfNeeded(it)
     }
     val weekNumberTextPaint = Paint(Paint.ANTI_ALIAS_FLAG).also {
         it.textAlign = Paint.Align.CENTER
+        it.typeface = typeface
         it.textSize = headerTextSize
         it.color = colorTextDayName
         addShadowIfNeeded(it)
     }
     val weekDayInitialsTextPaint = Paint(Paint.ANTI_ALIAS_FLAG).also {
         it.textAlign = Paint.Align.CENTER
+        it.typeface = typeface
         it.textSize = diameter * 20 / 40
         it.color = colorTextDayName
         addShadowIfNeeded(it)
@@ -120,6 +130,7 @@ class SharedDayViewData(
     val widgetFooterTextPaint = widgetTextColor?.let { widgetTextColor ->
         Paint(Paint.ANTI_ALIAS_FLAG).also {
             it.textAlign = Paint.Align.CENTER
+            it.typeface = typeface
             it.textSize = diameter * 20 / 40
             it.color = widgetTextColor
             it.alpha = 90

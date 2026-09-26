@@ -21,11 +21,15 @@ enum class Theme(val key: String, @StringRes val title: Int, @StyleRes private v
     DARK("DarkTheme", R.string.theme_dark, R.style.DarkTheme),
     MODERN("ClassicTheme"/*legacy*/, R.string.theme_modern, R.style.ModernTheme),
     BLUE("BlueTheme", R.string.theme_blue, R.style.BlueTheme),
-    BLACK("BlackTheme", R.string.theme_black, R.style.BlackTheme);
+    BLACK("BlackTheme", R.string.theme_black, R.style.BlackTheme),
+    CACTUS("CactusTheme", R.string.theme_cactus, R.style.CactusTheme);
 
     companion object {
+        // Cactus is the app's default look, the other themes remain selectable in settings
+        val DEFAULT = CACTUS
+
         private val SharedPreferences?.theme
-            get() = this?.getString(PREF_THEME, null) ?: SYSTEM_DEFAULT.key
+            get() = this?.getString(PREF_THEME, null) ?: DEFAULT.key
 
         fun apply(activity: AppCompatActivity) {
             val theme = getCurrent(activity)

@@ -59,7 +59,7 @@ class InterfaceCalendarFragment : PreferenceFragmentCompat() {
                     PREF_THEME,
                     enumValues<Theme>().map { getString(it.title) },
                     enumValues<Theme>().map { it.key },
-                    Theme.SYSTEM_DEFAULT.key,
+                    Theme.DEFAULT.key,
                     R.string.select_skin
                 ) { title(R.string.select_skin) }
                 switch(PREF_EASTERN_GREGORIAN_ARABIC_MONTHS, false) {
