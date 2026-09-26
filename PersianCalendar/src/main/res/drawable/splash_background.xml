@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Vector drawables can't be used in window backgrounds before Android 5, see drawable-v21 -->
+<color xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/cactus_canvas" />

@@ -61,17 +61,18 @@
         <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
     </style>
 
-    <style name="SplashScreenTheme" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="SplashScreenTheme" parent="Theme.Material3.Dark.NoActionBar">
         <item name="android:windowTranslucentStatus" tools:targetApi="lollipop">true</item>
         <item name="android:windowTranslucentNavigation" tools:targetApi="lollipop">true</item>
-        <item name="android:windowSplashscreenContent" tools:targetApi="o">@drawable/splash_screen
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:windowSplashScreenBackground" tools:targetApi="s">
+            @color/cactus_canvas
         </item>
         <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="s">
-            @drawable/splash_icon_animation
+            @drawable/cactus_splash_icon
         </item>
-        <item name="android:windowSplashScreenAnimationDuration" tools:targetApi="s">1000</item>
         <!-- Set Android 5 recent apps tab color https://stackoverflow.com/q/26899820 -->
-        <item name="colorPrimary">@color/light_primary</item>
+        <item name="colorPrimary">@color/cactus_canvas</item>
     </style>
 
     <style name="BaseDarkTheme" parent="Theme.Material3.Dark.NoActionBar">
