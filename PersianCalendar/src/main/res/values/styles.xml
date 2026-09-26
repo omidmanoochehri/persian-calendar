@@ -36,6 +36,8 @@
     <attr name="coloredTabIndicatorColor" format="reference" />
     <attr name="colorTextDaySelected" format="reference" />
     <attr name="dialogBackgroundColor" format="color" />
+    <attr name="appCardRadius" format="dimension" />
+    <attr name="appButtonShapeOverlay" format="reference" />
 
     <!-- its v31 version is more interesting -->
     <style name="WidgetTheme" />
@@ -47,8 +49,8 @@
 
     <style name="BottomSheetAppearance">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSizeTopLeft">@dimen/common_radius</item>
-        <item name="cornerSizeTopRight">@dimen/common_radius</item>
+        <item name="cornerSizeTopLeft">?attr/appCardRadius</item>
+        <item name="cornerSizeTopRight">?attr/appCardRadius</item>
     </style>
 
     <style name="BottomSheetStyle" parent="Widget.Material3.BottomSheet.Modal">
@@ -73,6 +75,8 @@
     </style>
 
     <style name="BaseDarkTheme" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="appCardRadius">@dimen/common_radius</item>
+        <item name="appButtonShapeOverlay">@style/ShapeAppearanceOverlay.Material3.Button</item>
         <item name="switchStyle">@style/AppSwitchStyle</item>
         <item name="colorPrimaryContainer">@color/primary_container_dark</item>
         <item name="colorSecondaryContainer">@color/secondary_container_dark</item>
@@ -98,6 +102,8 @@
     </style>
 
     <style name="BaseLightTheme" parent="Theme.Material3.Light.NoActionBar">
+        <item name="appCardRadius">@dimen/common_radius</item>
+        <item name="appButtonShapeOverlay">@style/ShapeAppearanceOverlay.Material3.Button</item>
         <item name="switchStyle">@style/AppSwitchStyle</item>
         <item name="colorPrimaryContainer">@color/primary_container_light</item>
         <item name="colorSecondaryContainer">@color/secondary_container_light</item>
@@ -173,6 +179,88 @@
         <item name="coloredTabIndicatorColor">@color/dark_accent</item>
         <item name="colorTextDaySelected">@color/dark_primary</item>
         <item name="colorAppointment">@color/dark_accent</item>
+    </style>
+
+    <!-- Based on the Cactus Software Group design system: a near-black canvas, a single
+         green accent used sparingly, hairline borders and near-sharp 4dp corners. -->
+    <style name="CactusTheme" parent="BaseDarkTheme">
+        <item name="android:windowBackground">@color/cactus_canvas</item>
+
+        <item name="colorMonthsBackground">@color/cactus_surface</item>
+        <item name="colorPrimary">@color/cactus_accent</item>
+        <item name="colorOnPrimary">@color/cactus_canvas</item>
+        <item name="colorPrimaryDark">@color/cactus_canvas</item>
+        <item name="colorPrimaryContainer">@color/cactus_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/cactus_accent</item>
+        <item name="colorSecondary">@color/cactus_accent</item>
+        <item name="colorOnSecondary">@color/cactus_canvas</item>
+        <item name="colorSecondaryContainer">@color/cactus_surface_hover</item>
+        <item name="colorOnSecondaryContainer">@color/cactus_text_primary</item>
+        <item name="colorAccent">@color/cactus_accent</item>
+        <item name="colorError">@color/cactus_error</item>
+        <item name="android:colorBackground">@color/cactus_canvas</item>
+        <item name="colorOnBackground">@color/cactus_text_primary</item>
+        <item name="colorSurface">@color/cactus_surface</item>
+        <item name="colorOnSurface">@color/cactus_text_primary</item>
+        <item name="colorSurfaceVariant">@color/cactus_surface_raised</item>
+        <item name="colorOnSurfaceVariant">@color/cactus_text_secondary</item>
+        <item name="colorOutline">@color/cactus_border_strong</item>
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">
+            @color/cactus_canvas
+        </item>
+        <item name="navigationBarColor">@color/cactus_canvas</item>
+
+        <item name="colorCard">@color/cactus_surface</item>
+        <item name="colorBackground">@color/cactus_canvas</item>
+        <item name="colorTextPrimary">@color/cactus_accent</item>
+        <item name="colorIcon">@color/cactus_text_secondary</item>
+        <item name="colorTextNormal">@color/cactus_text_primary</item>
+        <item name="colorTextSecond">@color/cactus_text_secondary</item>
+        <item name="colorTextHoliday">@color/cactus_error</item>
+        <item name="colorHoliday">@color/cactus_error</item>
+        <item name="colorTextDrawer">@color/cactus_text_primary</item>
+        <item name="colorTextDay">@color/cactus_text_primary</item>
+        <item name="colorTextDayCurrent">@color/cactus_text_primary</item>
+        <item name="colorTextToday">@color/cactus_text_primary</item>
+        <item name="colorTextDayName">@color/cactus_text_muted</item>
+        <item name="colorTextAthan">@color/cactus_text_primary</item>
+        <item name="colorDivider">@color/cactus_border_subtle</item>
+        <item name="colorCurrentDay">@color/cactus_accent</item>
+        <item name="colorSelectDay">@color/cactus_accent</item>
+        <item name="colorEventIndicator">@color/cactus_text_secondary</item>
+        <item name="colorDrawerBackground">@color/cactus_background_soft</item>
+        <item name="colorDrawerSelect">@color/cactus_accent_soft</item>
+        <item name="colorDrawerIcon">@color/cactus_accent</item>
+        <item name="colorMonthSwitch">@color/cactus_accent</item>
+
+        <item name="android:textColor">@color/cactus_text_primary</item>
+
+        <item name="coloredTabBackground">@color/cactus_surface</item>
+        <item name="coloredTabTextColor">@color/cactus_accent</item>
+        <item name="normalTabTextColor">@color/tab_background_select_dark</item>
+
+        <item name="menuIconColor">@color/cactus_menu_icon_color</item>
+        <item name="dragIconColor">@color/cactus_menu_icon_color</item>
+        <item name="coloredTabIndicatorColor">@color/cactus_accent</item>
+        <item name="colorTextDaySelected">@color/cactus_canvas</item>
+        <item name="colorAppointment">@color/cactus_info</item>
+        <item name="dialogBackgroundColor">#E6050505</item>
+
+        <item name="appCardRadius">@dimen/cactus_radius</item>
+        <item name="appButtonShapeOverlay">@style/CactusShapeAppearance</item>
+        <item name="shapeAppearanceSmallComponent">@style/CactusShapeAppearance</item>
+        <item name="shapeAppearanceMediumComponent">@style/CactusShapeAppearance</item>
+        <item name="shapeAppearanceLargeComponent">@style/CactusShapeAppearance</item>
+        <item name="materialButtonStyle">@style/CactusButton</item>
+    </style>
+
+    <style name="CactusShapeAppearance">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/cactus_radius</item>
+    </style>
+
+    <style name="CactusButton" parent="Widget.Material3.Button">
+        <item name="shapeAppearanceOverlay">@style/CactusShapeAppearance</item>
     </style>
 
     <style name="BlackTheme" parent="BaseDarkTheme">
@@ -461,9 +549,13 @@
         <item name="trackTint">@color/switch_track_tint</item>
     </style>
 
-    <style name="AppOutlinedButton" parent="Widget.Material3.Button.OutlinedButton" />
+    <style name="AppOutlinedButton" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="shapeAppearanceOverlay">?attr/appButtonShapeOverlay</item>
+    </style>
 
-    <style name="AppTextButton" parent="Widget.Material3.Button.TextButton" />
+    <style name="AppTextButton" parent="Widget.Material3.Button.TextButton">
+        <item name="shapeAppearanceOverlay">?attr/appButtonShapeOverlay</item>
+    </style>
 
     <style name="AppChipChoice" parent="Widget.Material3.Chip.Assist" />
 

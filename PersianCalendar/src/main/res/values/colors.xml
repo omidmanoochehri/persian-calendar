@@ -189,4 +189,23 @@
     <color name="display_border">#FF333333</color>
     <color name="display_dark">@android:color/black</color>
     <color name="display_reflect">@color/black_reflect</color>
+
+    <!-- Cactus theme, from the Cactus Software Group design system -->
+    <color name="cactus_canvas">#050505</color>
+    <color name="cactus_background_soft">#090909</color>
+    <color name="cactus_surface">#0D0D0D</color>
+    <color name="cactus_surface_raised">#121212</color>
+    <color name="cactus_surface_hover">#181818</color>
+    <color name="cactus_text_primary">#F7F7F7</color>
+    <color name="cactus_text_secondary">#A7A7A7</color>
+    <color name="cactus_text_muted">#707070</color>
+    <color name="cactus_accent">#BEFF64</color>
+    <color name="cactus_accent_pressed">#A4E344</color>
+    <color name="cactus_accent_soft">#1FBEFF64</color>
+    <color name="cactus_primary_container">#1B2310</color>
+    <color name="cactus_border_subtle">#14FFFFFF</color>
+    <color name="cactus_border_strong">#3DFFFFFF</color>
+    <color name="cactus_error">#FF6B5E</color>
+    <color name="cactus_info">#7EC8FF</color>
+    <color name="cactus_menu_icon_color">#88FFFFFF</color>
 </resources>
